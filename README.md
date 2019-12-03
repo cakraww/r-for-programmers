@@ -17,6 +17,20 @@ Install [R](https://cran.rstudio.com/) and [RStudio](https://www.rstudio.com/pro
 
 > RStudio also has built-in vim keybinding support. It is not perfect, but works good enough. The setting is on `Tools > Global Options > Code > Keybindings > Vim`.
 
+Change RStudio working directory: `RStudio > Preferences > General > Default working directory`.
+
+### Spark
+To use Spark:
+1. Install Java. Download JDK 8 from https://aws.amazon.com/corretto/. Using Java 8 because last time I tried, Spark only works with Java 8.
+2. Install Spark from RStudio:
+```R
+install.packages("sparklyr")
+library(sparklyr)
+
+spark_available_versions()  # see available version
+spark_install(version = "2.4")  
+```
+
 ## Working with RStudio
 ### RStudio UI
 Create a new file, then the top left pane is where you write the script. The console (R REPL) is on the bottom left pane. Plots and documentation is on the bottom right pane.
